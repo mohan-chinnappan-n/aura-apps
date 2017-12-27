@@ -1,0 +1,8 @@
+<aura:component>
+    <aura:attribute name="text" type="String" default="" access="GLOBAL" />
+
+    <p>
+    The following text is passed via this component's (textCmp) attribute 'text':
+    {!v.text}
+    </p>
+</aura:component>

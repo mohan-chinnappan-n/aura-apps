@@ -1,0 +1,20 @@
+<aura:component>
+
+   <aura:attribute name="listTitle" type="String" default="" access="GLOBAL" />
+
+  <h2>{!v.listTitle}</h2>
+   <ul>
+     <li class="red">I'm red.</li>
+     <li class="blue">I'm blue.</li>
+     <li class="green">I'm green.</li>
+  </ul>
+
+  <!--
+     {#v.listTitle} is passthrough variable from this component to the child component
+  -->
+  <example:textCmp text="{#v.listTitle}"/>
+  <ui:inputText aura:id="name" label="Enter Name:" placeholder="Your Name" />
+
+ 	<ui:outputText aura:id="outName" value="test value" class="text"/>
+
+</aura:component>

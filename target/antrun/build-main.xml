@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <path id="definitions">
+    <fileset dir="src/main/modules" erroronmissingdir="false">
+      <include name="**/*"/>
+    </fileset>
+  </path>
+  <pathconvert property="definitionList" pathsep="," refid="definitions" setonempty="false">
+    <regexpmapper from=".*[/\\]([^/\\]*)[/\\]([^/\\]*)[/\\](.*)" to="\1/\2/\3"/>
+  </pathconvert>
+  <echo file="target/src-gen/main/modules/.index">${definitionList}</echo>
+</target>
+</project>
